@@ -1,0 +1,44 @@
+/*Las expresiones serían los valores que les ponemos las propiedades del selector que estamos dando estilos
+
+/* Números */
+div {
+  width: 200px; /* Valor numérico */
+  opacity: 0.8; /* Valor numérico */
+  font-size: 18px; /* Valor numérico */
+}
+
+/* Strings */
+h1 {
+  content: "Hola"; /* Valor de cadena */
+  font-family: "Arial", sans-serif; /* Valor de cadena */
+}
+
+/* Colores */
+p {
+  color: red; /* Valor de color */
+  background-color: #00ff00; /* Valor de color en formato hexadecimal */
+  border: 1px solid rgb(255, 0, 0); /* Valor de color en formato de función RGB */
+}
+
+/* Booleanos */
+span {
+  display: none; /* Valor booleano (false) */
+  visibility: visible; /* Valor booleano (true) */
+}
+
+/* Null */
+section {
+  --mi-variable: null; /* Valor null */
+}
+
+/* Listas */
+ul {
+  list-style: square inside; /* Valor de lista */
+  margin: 10px 20px 30px; /* Valor de lista */
+}
+
+/* Mapas */
+body {
+  --mi-mapa: (primary-color: blue, secondary-color: red); /* Valor de mapa */
+  color: var(--mi-mapa, primary-color); /* Uso de mapa en una propiedad */
+}

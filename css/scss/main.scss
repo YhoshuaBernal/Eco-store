@@ -1,0 +1,186 @@
+$primary-color:#FFEFE7;
+$secondary-color: #FFDAC6;
+$terceary-color: #BABD8D;
+$primary-text-color: #7C6A0A;
+$quaternary-text-color: #FA9500;
+$font-stack: 'IBM Plex Sans', sans-serif;
+$paragraph-size: 1.4rem;
+
+@mixin flexCenter($direccion, $content, $align) {
+  display: flex;
+  flex-direction: $direccion;
+  justify-content: $content;
+  align-items: $align;
+
+}
+
+@mixin buttonStyle {
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $font-stack;
+  background-color: $primary-color;
+
+}
+nav {
+  width: 100%;
+  @include flexCenter(row, space-between, center);
+  color: $primary-text-color;
+  
+  p {
+    font-size: $paragraph-size;
+    padding-left: 30px;  
+    margin: 24px;
+  }
+  .navbar__icons {
+    display: flex;
+    gap: 18px;
+    padding-right: 30px;
+    @include buttonStyle()
+  }
+}
+.main-section {
+  article {
+    margin-top: 60px;
+    width: auto;
+    @include flexCenter(row, space-between, center);
+    padding: 0 70px;
+    color: $primary-text-color;
+
+    .main__article__impact-section {
+      width: 50%;
+      @include flexCenter(column, none, none);
+      padding-top: 50px;
+      row-gap: 15px;
+
+    }
+    .info-section__title {
+      font-size: 3rem;
+    }
+    .info-section__content {
+      font-size: $paragraph-size;
+    }
+    @include buttonStyle();
+    button {
+      border-radius: 35px;
+      width: 200px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 20px;
+      background-color: $quaternary-text-color;
+      color: white;
+    }
+    section {
+      width: 550px;
+      height: 680px;
+
+      .main__article__img-section {
+        @include flexCenter(row, center, center); 
+        width: 100%;
+        height: 680px;
+        overflow: hidden;
+        border-radius: 20px;  
+      }
+      img{
+        width: 100%; 
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.global-sections {
+  height: auto;
+  padding: 60px;
+  h2 {
+    color: $primary-text-color;
+    font-size: 2rem;
+  }
+  .product-section__healthcare { 
+    h2 {
+      font-weight: 300;
+      padding-bottom: 60px;
+    }
+    .healthcare__card-section {
+      display: grid;
+      justify-content: space-evenly;
+      grid-template-columns: repeat(auto-fill, 320px);
+      gap: 24px;
+      grid-auto-flow: row dense;
+    }
+    .healtcare__product-card {
+      width: 320px;
+      height: auto;
+      border-radius: 8px;
+      background-color: $secondary-color;
+      color: $primary-text-color;
+      @include flexCenter(column, center, center);
+      overflow: hidden;
+      position: relative;
+      .product-card__icon-container {
+        svg {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          path {
+            stroke: currentColor; //curentColor buscara el valor color mas cercano 
+          }
+        }
+      }
+      .product-card__product-image {
+        width: auto;
+        @include flexCenter(column, center, center);
+        height: 85%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .product-card__info-container {
+        flex-grow: 1;
+        @include flexCenter(column, center, center);
+      }
+    }
+  }
+  .product-section__forniture {
+    @extend .product-section__healthcare;
+    .healtcare__product-card{
+      background-color: $terceary-color;
+    }
+  }
+}
+
+footer {
+  background-color: $quaternary-text-color;
+  width: 100%;
+  height: 250px;
+}
+
+@media (max-width: 600px) {
+  .main-section {
+    article {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}
