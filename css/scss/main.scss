@@ -108,7 +108,7 @@ nav {
   }
 }
 
-.global-sections {
+.main__product-section {
   height: auto;
   padding: 60px;
   h2 {
@@ -169,6 +169,14 @@ nav {
     }
   }
 }
+
+.main__info-section {
+  .info-section__about-us {
+    
+  }
+}
+
+
 
 footer {
   background-color: $quaternary-text-color;

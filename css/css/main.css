@@ -100,26 +100,26 @@ nav .navbar__icons button {
      object-fit: contain;
 }
 
-.global-sections {
+.main__product-section {
   height: auto;
   padding: 60px;
 }
-.global-sections h2 {
+.main__product-section h2 {
   color: #7C6A0A;
   font-size: 2rem;
 }
-.global-sections .product-section__healthcare h2, .global-sections .product-section__forniture h2 {
+.main__product-section .product-section__healthcare h2, .main__product-section .product-section__forniture h2 {
   font-weight: 300;
   padding-bottom: 60px;
 }
-.global-sections .product-section__healthcare .healthcare__card-section, .global-sections .product-section__forniture .healthcare__card-section {
+.main__product-section .product-section__healthcare .healthcare__card-section, .main__product-section .product-section__forniture .healthcare__card-section {
   display: grid;
   justify-content: space-evenly;
   grid-template-columns: repeat(auto-fill, 320px);
   gap: 24px;
   grid-auto-flow: row dense;
 }
-.global-sections .product-section__healthcare .healtcare__product-card, .global-sections .product-section__forniture .healtcare__product-card {
+.main__product-section .product-section__healthcare .healtcare__product-card, .main__product-section .product-section__forniture .healtcare__product-card {
   width: 320px;
   height: auto;
   border-radius: 8px;
@@ -132,15 +132,15 @@ nav .navbar__icons button {
   overflow: hidden;
   position: relative;
 }
-.global-sections .product-section__healthcare .healtcare__product-card .product-card__icon-container svg, .global-sections .product-section__forniture .healtcare__product-card .product-card__icon-container svg {
+.main__product-section .product-section__healthcare .healtcare__product-card .product-card__icon-container svg, .main__product-section .product-section__forniture .healtcare__product-card .product-card__icon-container svg {
   position: absolute;
   right: 10px;
   top: 10px;
 }
-.global-sections .product-section__healthcare .healtcare__product-card .product-card__icon-container svg path, .global-sections .product-section__forniture .healtcare__product-card .product-card__icon-container svg path {
+.main__product-section .product-section__healthcare .healtcare__product-card .product-card__icon-container svg path, .main__product-section .product-section__forniture .healtcare__product-card .product-card__icon-container svg path {
   stroke: currentColor;
 }
-.global-sections .product-section__healthcare .healtcare__product-card .product-card__product-image, .global-sections .product-section__forniture .healtcare__product-card .product-card__product-image {
+.main__product-section .product-section__healthcare .healtcare__product-card .product-card__product-image, .main__product-section .product-section__forniture .healtcare__product-card .product-card__product-image {
   width: auto;
   display: flex;
   flex-direction: column;
@@ -149,18 +149,18 @@ nav .navbar__icons button {
   height: 85%;
   overflow: hidden;
 }
-.global-sections .product-section__healthcare .healtcare__product-card .product-card__product-image img, .global-sections .product-section__forniture .healtcare__product-card .product-card__product-image img {
+.main__product-section .product-section__healthcare .healtcare__product-card .product-card__product-image img, .main__product-section .product-section__forniture .healtcare__product-card .product-card__product-image img {
   width: 100%;
   height: auto;
 }
-.global-sections .product-section__healthcare .healtcare__product-card .product-card__info-container, .global-sections .product-section__forniture .healtcare__product-card .product-card__info-container {
+.main__product-section .product-section__healthcare .healtcare__product-card .product-card__info-container, .main__product-section .product-section__forniture .healtcare__product-card .product-card__info-container {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.global-sections .product-section__forniture .healtcare__product-card {
+.main__product-section .product-section__forniture .healtcare__product-card {
   background-color: #BABD8D;
 }
 
