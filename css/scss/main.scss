@@ -113,60 +113,71 @@ nav {
   padding: 60px;
   h2 {
     color: $primary-text-color;
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .product-section__healthcare { 
     h2 {
       font-weight: 300;
       padding-bottom: 60px;
+      padding-left: 80px;
     }
     .healthcare__card-section {
       display: grid;
       justify-content: space-evenly;
-      grid-template-columns: repeat(auto-fill, 320px);
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+      gap: 50px;
       grid-auto-flow: row dense;
-    }
-    .healtcare__product-card {
-      width: 320px;
-      height: auto;
-      border-radius: 8px;
-      background-color: $secondary-color;
-      color: $primary-text-color;
-      @include flexCenter(column, center, center);
-      overflow: hidden;
-      position: relative;
-      .product-card__icon-container {
-        svg {
-          position: absolute;
-          right: 10px;
-          top: 10px;
-          path {
-            stroke: currentColor; //curentColor buscara el valor color mas cercano 
+      margin-bottom: 60px;
+
+      .healtcare__product-card {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        background-color: $secondary-color;
+        color: $primary-text-color;
+        @include flexCenter(column, center, center);
+        overflow: hidden;
+        .product-card__icon-container {
+          svg {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            path {
+              stroke: currentColor; //curentColor buscara el valor color mas cercano 
+            }
           }
         }
-      }
-      .product-card__product-image {
-        width: auto;
-        @include flexCenter(column, center, center);
-        height: 85%;
-        overflow: hidden;
-        img {
+        .product-card__product-image {
           width: 100%;
-          height: auto;
+          height: 70%;  
+          @include flexCenter(column, start, center);
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: auto;
+          }
         }
-      }
-      .product-card__info-container {
-        flex-grow: 1;
-        @include flexCenter(column, center, center);
+        .product-card__info-container {
+          margin: 0 32px;
+          flex-grow: 1;        
+          @include flexCenter(column, center, start);
+          font-size: 14px;
+          .product-card__title {
+            font-size: 24px;
+            font-weight: 500
+          }
+        }
       }
     }
   }
   .product-section__forniture {
     @extend .product-section__healthcare;
-    .healtcare__product-card{
+    .healthcare__card-section {
+      .healtcare__product-card{
       background-color: $terceary-color;
-    }
+      }
+    } 
   }
 }
 
@@ -184,11 +195,33 @@ footer {
   height: 250px;
 }
 
-@media (max-width: 600px) {
+
+@media (max-width: 800px) {
   .main-section {
     article {
       display: flex;
       flex-direction: column-reverse;
     }
   }
+  // .main__product-section { 
+  //   .product-section__healthcare { 
+  //     .healthcare__card-section {
+  //       grid-template-columns: repeat(2, 50%);
+  //     }
+  //   } 
+  // }
+  
+  
 }
+@media (max-width: 520px) {
+  .main__product-section { 
+    .product-section__healthcare { 
+      .healthcare__card-section {
+        display: flex;
+        flex-direction: row;
+        grid-template-columns: none;
+      }
+    } 
+  }
+}
+
