@@ -58,3 +58,23 @@ function renderProducts (arr) {
 }
 
 renderProducts(productos)
+
+
+const galleryImgs = document.querySelectorAll('.gallery-img');
+
+galleryImgs.forEach(img => {
+  img.addEventListener('mouseover', () => {
+    galleryImgs.forEach(otherImg => {
+      if (otherImg !== img) {
+        otherImg.querySelector('img').style.opacity = 0.7;
+        
+      }
+    });
+  });
+
+  img.addEventListener('mouseout', () => {
+    galleryImgs.forEach(otherImg => {
+      otherImg.querySelector('img').style.opacity = 1;
+    });
+  });
+});

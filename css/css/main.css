@@ -40,6 +40,9 @@ nav .navbar__icons button {
   border: none;
   cursor: pointer;
 }
+nav .navbar__icons button:hover {
+  transform: scale(1.1);
+}
 
 .main-section article {
   margin-top: 60px;
@@ -71,6 +74,9 @@ nav .navbar__icons button {
   border: none;
   cursor: pointer;
 }
+.main-section article button:hover {
+  transform: scale(1.1);
+}
 .main-section article button {
   border-radius: 35px;
   width: 200px;
@@ -96,23 +102,24 @@ nav .navbar__icons button {
 }
 .main-section article section img {
   width: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
-.main__product-section {
+.main-section {
   height: auto;
   padding: 60px;
 }
-.main__product-section h2 {
+.main-section h2 {
   color: #7C6A0A;
   font-size: 3rem;
+  font-weight: 500;
 }
-.main__product-section .product-section__healthcare h2, .main__product-section .product-section__forniture h2 {
+.main-section .product-section__healthcare h2, .main-section .product-section__forniture h2 {
   font-weight: 300;
   padding-bottom: 60px;
-  padding-left: 80px;
 }
-.main__product-section .product-section__healthcare .healthcare__card-section, .main__product-section .product-section__forniture .healthcare__card-section {
+.main-section .product-section__healthcare .healthcare__card-section, .main-section .product-section__forniture .healthcare__card-section {
   display: grid;
   justify-content: space-evenly;
   grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
@@ -120,7 +127,7 @@ nav .navbar__icons button {
   grid-auto-flow: row dense;
   margin-bottom: 60px;
 }
-.main__product-section .product-section__healthcare .healthcare__card-section .healtcare__product-card, .main__product-section .product-section__forniture .healthcare__card-section .healtcare__product-card {
+.main-section .product-section__healthcare .healthcare__card-section .healtcare__product-card, .main-section .product-section__forniture .healthcare__card-section .healtcare__product-card {
   position: relative;
   width: 100%;
   height: auto;
@@ -133,15 +140,15 @@ nav .navbar__icons button {
   align-items: center;
   overflow: hidden;
 }
-.main__product-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__icon-container svg, .main__product-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__icon-container svg {
+.main-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__icon-container svg, .main-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__icon-container svg {
   position: absolute;
   right: 10px;
   top: 10px;
 }
-.main__product-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__icon-container svg path, .main__product-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__icon-container svg path {
+.main-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__icon-container svg path, .main-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__icon-container svg path {
   stroke: currentColor;
 }
-.main__product-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__product-image, .main__product-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__product-image {
+.main-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__product-image, .main-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__product-image {
   width: 100%;
   height: 70%;
   display: flex;
@@ -150,11 +157,11 @@ nav .navbar__icons button {
   align-items: center;
   overflow: hidden;
 }
-.main__product-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__product-image img, .main__product-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__product-image img {
+.main-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__product-image img, .main-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__product-image img {
   width: 100%;
   height: auto;
 }
-.main__product-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__info-container, .main__product-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__info-container {
+.main-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__info-container, .main-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__info-container {
   margin: 0 32px;
   flex-grow: 1;
   display: flex;
@@ -163,12 +170,74 @@ nav .navbar__icons button {
   align-items: start;
   font-size: 14px;
 }
-.main__product-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__info-container .product-card__title, .main__product-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__info-container .product-card__title {
+.main-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__info-container .product-card__title, .main-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__info-container .product-card__title {
   font-size: 24px;
   font-weight: 500;
 }
-.main__product-section .product-section__forniture .healthcare__card-section .healtcare__product-card {
+.main-section .product-section__forniture .healthcare__card-section .healtcare__product-card {
   background-color: #BABD8D;
+}
+
+.info-section__about-us {
+  padding-bottom: 120px;
+}
+.info-section__about-us h2 {
+  padding-bottom: 120px;
+}
+.info-section__about-us .info-section__mision-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.info-section__about-us .info-section__mision-section .mision-section__earth-section,
+.info-section__about-us .info-section__mision-section .mision-section__innovation-section {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.info-section__about-us .info-section__mision-section .mision-section__earth-section img,
+.info-section__about-us .info-section__mision-section .mision-section__innovation-section img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 150px;
+}
+.info-section__about-us .info-section__mision-section .mision-section__earth-section p,
+.info-section__about-us .info-section__mision-section .mision-section__innovation-section p {
+  text-align: center;
+  font-size: 1.4rem;
+  color: #E86424;
+  min-width: 190px;
+  max-width: 300px;
+  font-weight: 500;
+}
+.info-section__about-us .info-section__mision-section .mision-section__innovation-section p {
+  max-width: 220px;
+}
+
+.info-section__gallery .gallery-container {
+  margin: 60px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+.info-section__gallery .gallery-container .gallery-img {
+  height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.info-section__gallery .gallery-container .gallery-img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.info-section__gallery .gallery-container .gallery-img img:hover {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
 }
 
 footer {
@@ -184,7 +253,7 @@ footer {
   }
 }
 @media (max-width: 520px) {
-  .main__product-section .product-section__healthcare .healthcare__card-section, .main__product-section .product-section__forniture .healthcare__card-section {
+  .main__product-section .product-section__healthcare .healthcare__card-section, .main__product-section .main-section .product-section__forniture .healthcare__card-section, .main-section .main__product-section .product-section__forniture .healthcare__card-section {
     display: flex;
     flex-direction: row;
     grid-template-columns: none;
