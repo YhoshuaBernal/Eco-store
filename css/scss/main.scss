@@ -3,6 +3,7 @@ $secondary-color: #FFDAC6;
 $terceary-color: #BABD8D;
 $primary-text-color: #7C6A0A;
 $quaternary-text-color: #FA9500;
+$text-secondary-color: #E86424;
 $font-stack: 'IBM Plex Sans', sans-serif;
 $paragraph-size: 1.4rem;
 
@@ -51,90 +52,93 @@ nav {
   
   p {
     font-size: $paragraph-size;
-    padding-left: 30px;  
     margin: 24px;
+
   }
   .navbar__icons {
-    display: flex;
-    gap: 18px;
+    @include flexCenter(row, space-between, center);
+    max-width: 180px;
+    flex-grow: 1;
     padding-right: 30px;
     @include buttonStyle()
   }
 }
 .main-section {
+  height: auto;
+  padding: 0 60px 60px 60px;
   article {
-    margin-top: 60px;
+    margin-top: 40px;
     width: auto;
-    @include flexCenter(row, space-between, center);
-    padding: 0 70px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     color: $primary-text-color;
-
-    .main__article__impact-section {
-      width: 50%;
-      @include flexCenter(column, none, none);
-      padding-top: 50px;
+    margin-bottom: 60px;
+    .article__impact-section {
+      width: 80%;
+      @include flexCenter(column, space-evenly, start);
+      padding: 50px 0;
       row-gap: 15px;
-
+      
+      .info-section__title {
+        font-size: 2.8rem;
+      }
+      .info-section__content {
+        font-size: $paragraph-size;
+        width: 100%;
+      }
+      @include buttonStyle();
+      button {
+        border-radius: 35px;
+        width: 200px;
+        font-weight: 600;
+        font-size: 1.2rem;
+        padding: 20px;
+        background-color: $quaternary-text-color;
+        color: white;
+      }
     }
-    .info-section__title {
-      font-size: 3rem;
-    }
-    .info-section__content {
-      font-size: $paragraph-size;
-    }
-    @include buttonStyle();
-    button {
-      border-radius: 35px;
-      width: 200px;
-      font-weight: 600;
-      font-size: 1.2rem;
-      padding: 20px;
-      background-color: $quaternary-text-color;
-      color: white;
-    }
-    section {
-      width: 550px;
-      height: 680px;
-
-      .main__article__img-section {
+    .img-section {
+      @include flexCenter(row, flex-end, center); 
+      .article__img-section {
         @include flexCenter(row, center, center); 
         width: 100%;
-        height: 680px;
+        max-width: 550px;
+        max-height: 680px;
         overflow: hidden;
         border-radius: 20px;  
+      
       }
-      img{
+      img {
         width: 100%; 
+        border-radius: 20px;  
         object-fit: contain;
+  
       }
     }
   }
 }
 
 .main-section {
-  height: auto;
-  padding: 60px;
   h2 {
+    padding-bottom: 60px;
     color: $primary-text-color;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
   }
   .product-section__healthcare { 
-    h2 {
-      font-weight: 300;
-      padding-bottom: 60px;
-    }
     .healthcare__card-section {
-      display: grid;
-      justify-content: space-evenly;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll;
+      justify-content: start;
       gap: 50px;
-      grid-auto-flow: row dense;
       margin-bottom: 60px;
 
       .healtcare__product-card {
         position: relative;
         width: 100%;
+        min-width: 250px;
+        max-width: 300px;
         height: auto;
         border-radius: 8px;
         background-color: $secondary-color;
@@ -147,7 +151,7 @@ nav {
             right: 10px;
             top: 10px;
             path {
-              stroke: currentColor; //curentColor buscara el valor color mas cercano 
+              stroke: currentColor;
             }
           }
         }
@@ -165,9 +169,9 @@ nav {
           margin: 0 32px;
           flex-grow: 1;        
           @include flexCenter(column, center, start);
-          font-size: 14px;
+          font-size: .9rem;
           .product-card__title {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: 500
           }
         }
@@ -205,7 +209,7 @@ nav {
       p {
         text-align: center;
         font-size: $paragraph-size;
-        color: #E86424;
+        color: $text-secondary-color;
         min-width: 190px;
         max-width: 300px;
         font-weight: 500;
@@ -220,8 +224,9 @@ nav {
 }
 .info-section__gallery {
   .gallery-container {
-    margin: 60px 40px;
+    width: 100%;
     display: grid;
+    margin: 0 0 60px 0;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     .gallery-img {
@@ -232,6 +237,7 @@ nav {
       border-radius: 8px;
       img {
         width: 100%;
+        height: 100%;
         object-fit: cover;
         &:hover {
           transform: scale(1.1);
@@ -241,12 +247,77 @@ nav {
     }
   }
 }
-
+.info-section__location {
+  color: $text-secondary-color;
+  h3 {
+    padding-top: 40px;
+    font-size: 2rem;
+    font-weight: 400
+  }
+  .location__map {
+    @include flexCenter(column, center, center);
+    padding-bottom: 50px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    img {
+      object-fit: cover;
+    }
+    .map__info-container {
+      @include flexCenter(column, start, start);
+      width: 100%;
+      p {
+        font-size: $paragraph-size;
+      }
+    }
+  }
+}
 
 footer {
   background-color: $quaternary-text-color;
   width: 100%;
-  height: 250px;
+  height: auto;
+  color: white;
+  padding: 40px;
+  .footer__carrers-container {
+    padding: 30px;
+    h3 {
+      font-weight: 500;
+      padding-bottom: 18px;
+      font-size: 1.5rem;
+    }
+    p {
+      padding-bottom: 14px
+    }
+  }
+  .footer__social-media{ 
+    @include flexCenter(row, center, center);
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+
+
+
+@media (min-width: 801px) {
+  .main__product-section { 
+    .product-section__healthcare { 
+      .healthcare__card-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+        justify-content: space-evenly;
+        grid-auto-flow: row dense;
+      }
+    } 
+  }
+}
+
+@media (max-width: 1080px) {
+  .mision-section__earth-section,
+  .mision-section__innovation-section {
+    flex-direction: column;
+  }
 }
 
 
@@ -255,18 +326,84 @@ footer {
     article {
       display: flex;
       flex-direction: column-reverse;
+      align-items: center;
+      .article__impact-section {
+        width: 80%;
+        .info-section__title {
+          font-size: 2rem;
+        }
+        .info-section__content {
+          font-size: 1rem;
+          width: 100%;
+        }
+        button {
+          zoom: 90%;
+          align-self: center;
+        }
+      }
     }
   }  
-}
-@media (max-width: 520px) {
-  .main__product-section { 
-    .product-section__healthcare { 
-      .healthcare__card-section {
-        display: flex;
-        flex-direction: row;
-        grid-template-columns: none;
-      }
-    } 
+  .main-section {
+    padding: 0 30px;
+    .main__product-section { 
+      .product-section__healthcare { 
+        scroll-snap-type: x proximity;    
+        overscroll-behavior-x: contain;
+        .healthcare__card-section {
+          display: flex;
+          flex-direction: row;
+          overflow-x: scroll;
+          justify-content: start;
+        }
+      } 
+    }
   }
 }
+
+
+@media (max-width: 649px) {
+  html {
+    font-size: 14px;
+  }
+  .main-section {
+    article {
+      .article__impact-section {
+        width: 100%;
+        .info-section__title {
+          font-size: 2rem;
+        }
+        .info-section__content {
+          font-size: 12px;
+        }
+        button {
+          zoom: 80%;
+        }
+      }
+    }
+  }
+
+  .main__info-section {
+    .info-section__mision-section {
+      flex-direction: column;
+    }
+    .info-section__gallery {
+      .gallery-container {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+  .info-section__location {
+    h3 {
+      font-size: 1.7rem;
+    }
+    .location__map {
+      .map__info-container {
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
 

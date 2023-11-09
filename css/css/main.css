@@ -27,12 +27,15 @@ nav {
 }
 nav p {
   font-size: 1.4rem;
-  padding-left: 30px;
   margin: 24px;
 }
 nav .navbar__icons {
   display: flex;
-  gap: 18px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 180px;
+  flex-grow: 1;
   padding-right: 30px;
 }
 nav .navbar__icons button {
@@ -44,40 +47,43 @@ nav .navbar__icons button:hover {
   transform: scale(1.1);
 }
 
-.main-section article {
-  margin-top: 60px;
-  width: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 70px;
-  color: #7C6A0A;
+.main-section {
+  height: auto;
+  padding: 0 60px 60px 60px;
 }
-.main-section article .main__article__impact-section {
-  width: 50%;
+.main-section article {
+  margin-top: 40px;
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: #7C6A0A;
+  margin-bottom: 60px;
+}
+.main-section article .article__impact-section {
+  width: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: none;
-  align-items: none;
-  padding-top: 50px;
+  justify-content: space-evenly;
+  align-items: start;
+  padding: 50px 0;
   row-gap: 15px;
 }
-.main-section article .info-section__title {
-  font-size: 3rem;
+.main-section article .article__impact-section .info-section__title {
+  font-size: 2.8rem;
 }
-.main-section article .info-section__content {
+.main-section article .article__impact-section .info-section__content {
   font-size: 1.4rem;
+  width: 100%;
 }
-.main-section article button {
+.main-section article .article__impact-section button {
   background: none;
   border: none;
   cursor: pointer;
 }
-.main-section article button:hover {
+.main-section article .article__impact-section button:hover {
   transform: scale(1.1);
 }
-.main-section article button {
+.main-section article .article__impact-section button {
   border-radius: 35px;
   width: 200px;
   font-weight: 600;
@@ -86,50 +92,49 @@ nav .navbar__icons button:hover {
   background-color: #FA9500;
   color: white;
 }
-.main-section article section {
-  width: 550px;
-  height: 680px;
+.main-section article .img-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
-.main-section article section .main__article__img-section {
+.main-section article .img-section .article__img-section {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 680px;
+  max-width: 550px;
+  max-height: 680px;
   overflow: hidden;
   border-radius: 20px;
 }
-.main-section article section img {
+.main-section article .img-section img {
   width: 100%;
+  border-radius: 20px;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.main-section {
-  height: auto;
-  padding: 60px;
-}
 .main-section h2 {
+  padding-bottom: 60px;
   color: #7C6A0A;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
 }
-.main-section .product-section__healthcare h2, .main-section .product-section__forniture h2 {
-  font-weight: 300;
-  padding-bottom: 60px;
-}
 .main-section .product-section__healthcare .healthcare__card-section, .main-section .product-section__forniture .healthcare__card-section {
-  display: grid;
-  justify-content: space-evenly;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  justify-content: start;
   gap: 50px;
-  grid-auto-flow: row dense;
   margin-bottom: 60px;
 }
 .main-section .product-section__healthcare .healthcare__card-section .healtcare__product-card, .main-section .product-section__forniture .healthcare__card-section .healtcare__product-card {
   position: relative;
   width: 100%;
+  min-width: 250px;
+  max-width: 300px;
   height: auto;
   border-radius: 8px;
   background-color: #FFDAC6;
@@ -168,10 +173,10 @@ nav .navbar__icons button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 .main-section .product-section__healthcare .healthcare__card-section .healtcare__product-card .product-card__info-container .product-card__title, .main-section .product-section__forniture .healthcare__card-section .healtcare__product-card .product-card__info-container .product-card__title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 .main-section .product-section__forniture .healthcare__card-section .healtcare__product-card {
@@ -218,8 +223,9 @@ nav .navbar__icons button:hover {
 }
 
 .info-section__gallery .gallery-container {
-  margin: 60px 40px;
+  width: 100%;
   display: grid;
+  margin: 0 0 60px 0;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
 }
@@ -232,6 +238,7 @@ nav .navbar__icons button:hover {
 }
 .info-section__gallery .gallery-container .gallery-img img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -240,22 +247,140 @@ nav .navbar__icons button:hover {
   transition-duration: 0.3s;
 }
 
+.info-section__location {
+  color: #E86424;
+}
+.info-section__location h3 {
+  padding-top: 40px;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.info-section__location .location__map {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.info-section__location .location__map img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.info-section__location .location__map .map__info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+}
+.info-section__location .location__map .map__info-container p {
+  font-size: 1.4rem;
+}
+
 footer {
   background-color: #FA9500;
   width: 100%;
-  height: 250px;
+  height: auto;
+  color: white;
+  padding: 40px;
+}
+footer .footer__carrers-container {
+  padding: 30px;
+}
+footer .footer__carrers-container h3 {
+  font-weight: 500;
+  padding-bottom: 18px;
+  font-size: 1.5rem;
+}
+footer .footer__carrers-container p {
+  padding-bottom: 14px;
+}
+footer .footer__social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 40px;
 }
 
+@media (min-width: 801px) {
+  .main__product-section .product-section__healthcare .healthcare__card-section, .main__product-section .main-section .product-section__forniture .healthcare__card-section, .main-section .main__product-section .product-section__forniture .healthcare__card-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+    justify-content: space-evenly;
+    grid-auto-flow: row dense;
+  }
+}
+@media (max-width: 1080px) {
+  .mision-section__earth-section,
+  .mision-section__innovation-section {
+    flex-direction: column;
+  }
+}
 @media (max-width: 800px) {
   .main-section article {
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
   }
-}
-@media (max-width: 520px) {
-  .main__product-section .product-section__healthcare .healthcare__card-section, .main__product-section .main-section .product-section__forniture .healthcare__card-section, .main-section .main__product-section .product-section__forniture .healthcare__card-section {
+  .main-section article .article__impact-section {
+    width: 80%;
+  }
+  .main-section article .article__impact-section .info-section__title {
+    font-size: 2rem;
+  }
+  .main-section article .article__impact-section .info-section__content {
+    font-size: 1rem;
+    width: 100%;
+  }
+  .main-section article .article__impact-section button {
+    zoom: 90%;
+    align-self: center;
+  }
+  .main-section {
+    padding: 0 30px;
+  }
+  .main-section .main__product-section .product-section__healthcare, .main-section .main__product-section .product-section__forniture {
+    scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+  }
+  .main-section .main__product-section .product-section__healthcare .healthcare__card-section, .main-section .main__product-section .product-section__forniture .healthcare__card-section {
     display: flex;
     flex-direction: row;
-    grid-template-columns: none;
+    overflow-x: scroll;
+    justify-content: start;
+  }
+}
+@media (max-width: 649px) {
+  html {
+    font-size: 14px;
+  }
+  .main-section article .article__impact-section {
+    width: 100%;
+  }
+  .main-section article .article__impact-section .info-section__title {
+    font-size: 2rem;
+  }
+  .main-section article .article__impact-section .info-section__content {
+    font-size: 12px;
+  }
+  .main-section article .article__impact-section button {
+    zoom: 80%;
+  }
+  .main__info-section .info-section__mision-section {
+    flex-direction: column;
+  }
+  .main__info-section .info-section__gallery .gallery-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .info-section__location h3 {
+    font-size: 1.7rem;
+  }
+  .info-section__location .location__map .map__info-container p {
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=main.css.map */
